@@ -35,7 +35,7 @@ This project is built as a **monolithic application** and is designed to be easi
 ![links Page](screenshots/links.png)
 
 ### send messags – Generate Links
-![send messags Page](screenshots/send_messags.png)
+![send messags Page](screenshots/send_message.png)
 
 ###  sent – Generate Links
 ![sent Page](screenshots/sent.png)
@@ -50,6 +50,16 @@ This project is built as a **monolithic application** and is designed to be easi
 
 ---
 
+## 📦 Installation
+
+```bash
+git clone https://github.com/AlhassanHussein/tellme_web_app_monolith.git
+cd tellme/
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn backend.main:app --port 8000 --reload
+
 ## 🛠 Tech Stack
 
 - **Backend:** Python, FastAPI
@@ -61,24 +71,28 @@ This project is built as a **monolithic application** and is designed to be easi
 ---
 
 ## 📁 Project Structure
+
+
+## Project Structure
+
+```text
 .
-├── backend/
-│   ├── database.py
-│   ├── main.py
-│   ├── models.py
-│   ├── scheduler.py
-│   └── routers/
-│       └── api.py
-├── frontend/
-│   ├── app.js
-│   ├── i18n.js
-│   ├── index.html
-│   ├── private.html
-│   ├── public.html
-│   └── style.css
-├── venv/                 # Python Virtual Environment (omitted internal libs)
-├── database.db           # SQLite Database file
-├── README.md
-├── requirements.txt
-└── path                  # File/Directory
+├── backend/                # FastAPI Server Logic
+│   ├── main.py             # Application entry point
+│   ├── database.py         # Database connection configuration
+│   ├── models.py           # SQLAlchemy/SQLModel data definitions
+│   ├── scheduler.py        # Background tasks and periodic jobs
+│   └── routers/            
+│       └── api.py          # API route definitions
+├── frontend/               # Web Interface
+│   ├── index.html          # Main landing page
+│   ├── public.html         # Publicly accessible view
+│   ├── private.html        # Authenticated user view
+│   ├── app.js              # Frontend logic and API integration
+│   ├── i18n.js             # Internationalization/Translations
+│   └── style.css           # Global styles
+├── database.db             # SQLite database file
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+└── venv/                   # Python virtual environment (ignored in git)
 
